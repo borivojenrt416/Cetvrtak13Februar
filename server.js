@@ -49,13 +49,17 @@ app.get("/korisnici/pretraga/:naziv",(req,res)=>{
     
 })
 
-app.get("/korisnici/proizvod/:idpr",(req,res)=>{
-    console.log(req.params.idpr)
-    connection.query(`SELECT * FROM proizvodi WHERE idpr=?`,[req.params.idpr],(err,result)=>{
+app.get("/korisnici/proizvod/:IdAll/:Naziv",(req,res)=>{
+    console.log(req.params.IdAll)
+    console.log(req.params.Naziv)
+    connection.query(`SELECT * FROM ${req.params.IdAll} WHERE Naziv=?`,[req.params.Naziv],(err,result)=>{
         if(err)
-        {   return res.send(err)
+        {   
+            console.log(err)
+            return res.send(err)
         }
         else{
+            console.log(result)
             return res.json({
                 data:result
             })

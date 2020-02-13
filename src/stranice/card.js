@@ -47,7 +47,7 @@ export class Card extends Component {
                         </div>
                         </div>
                         <button type="submit" className="dodajUKorpu" id={product.naziv} onClick={this.dodaj}>DODAJ U KORPU<span id="korpa"><i className="fas fa-cart-plus"></i></span></button>
-                        <div className="detalj"><Link className="linkud" to={"/product/"+product.idpr}> DETALJI </Link></div>
+                        <div className="detalj"><Link className="linkud" to={"/product/"+product.IdAll+"/"+product.Naziv}> DETALJI </Link></div>
                     
                     </div>
                 </div>
